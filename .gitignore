@@ -1,0 +1,8 @@
+build/
+dist/
+modules/
+out/
+zmk/
+zephyr/
+
+.west

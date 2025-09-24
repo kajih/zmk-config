@@ -24,7 +24,7 @@ update:
 
 # Bygg vänster halva
 left:
-	west build -d build/left -s $(ZMK_APP) -b nice_nano_v2 -- -DSHIELD="kyria_rev3_left nice_view_adapter nice_view"
+	west build -d build/left -s $(ZMK_APP) -b nice_nano_v2 -- -DSHIELD="kyria_rev3_left nice_view_adapter nice_view" -DCONFIG_ZMK_STUDIO=y
 	mkdir -p $(OUT_DIR)
 	cp build/left/zephyr/zmk.uf2 $(OUT_DIR)/firmware-kyria_rev3_left-nice_view_adapter-nice_view-nice_nano_v2-$(BUILD_DATE).uf2
 

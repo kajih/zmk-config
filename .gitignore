@@ -6,3 +6,4 @@ zmk/
 zephyr/
 
 .west
+*.bak

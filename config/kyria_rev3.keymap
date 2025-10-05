@@ -27,14 +27,6 @@
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
-
-        td0: tap_dance_aring {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SV_A_RING>, <&kp SV_A_UMLAUT>;
-            display-name = "Tap-Two";
-        };
     };
 
     conditional_layers {
@@ -63,7 +55,7 @@
     };
 
     macros {
-        anddo_macro: test_macro {
+        mac0: anddo_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp SPACE &kp AMPS &kp AMPS &kp SPACE>;
@@ -143,10 +135,10 @@
         tri_layer {
             display-name = "Tri Layer";
             bindings = <
-&trans  &trans &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
-&trans  &td0   &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans           &trans  &trans
-&trans  &trans &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
-                       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans          &trans  &trans  &trans                                  &mac0   &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
+&trans  &kp SV_A_RING  &kp SV_A_UMLAUT &trans  &trans  &trans                                  &trans  &trans  &trans  &trans           &trans  &trans
+&trans  &trans         &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
+                       &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

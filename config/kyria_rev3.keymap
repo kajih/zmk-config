@@ -5,12 +5,14 @@
 #include "keys_sv.h"
 
 /* layers */
+
 #define QWE  0
 #define COL  1
 #define SYM  2
 #define NAV  3
 #define FUNC 4
 #define ADJ  5
+#define TRI  6
 
 #define XXXXX &none
 #define _____ &trans
@@ -19,17 +21,34 @@
     behaviors {
         mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
+            #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
-
             display-name = "Mod-Tap";
+        };
+
+        td0: tap_dance_aring {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SV_A_RING>, <&kp SV_A_UMLAUT>;
+            display-name = "Tap-Two";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <NAV SYM>;
+            then-layer = <TRI>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
+
         combo_nav {
             bindings = <&mo FUNC>;
             key-positions = <44 13>;
@@ -43,16 +62,25 @@
         };
     };
 
+    macros {
+        anddo_macro: test_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp SPACE &kp AMPS &kp AMPS &kp SPACE>;
+            label = "TEST_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         qwerty_layer {
             display-name = "Qwerty";
             bindings = <
-&mt GRAVE TAB  &kp Q            &kp W  &mt SV_A_UMLAUT E  &kp R     &kp T                                                                        &kp Y     &kp U     &kp I      &mt SV_O_UMLAUT O  &kp P        &kp BSPC
-&mt LCTRL ESC  &mt SV_A_RING A  &kp S  &kp D              &kp F     &kp G                                                                        &kp H     &kp J     &kp K      &kp L              &kp SV_SEMI  &mt RCTRL SV_DQT
-&kp LSHFT      &kp Z            &kp X  &kp C              &kp V     &kp B           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC &mt SV_RBKT SV_RBRC  &kp N     &kp M     &kp COMMA  &kp DOT            &kp FSLH     &kp RSHIFT
-                                       &mo ADJ            &kp LGUI  &mt LALT ENTER  &kp SPACE            &mo NAV     &mo SYM  &kp SPACE            &kp RALT  &kp RGUI  &kp K_APP
+&mt GRAVE ESC  &kp Q  &kp W  &kp E    &kp R     &kp T                                                                           &kp Y     &kp U     &kp I      &kp O    &kp P        &kp BSPC
+&mt LCTRL TAB  &kp A  &kp S  &kp D    &kp F     &kp G                                                                           &kp H     &kp J     &kp K      &kp L    &kp SV_SEMI  &mt RCTRL SV_DQT
+&kp LSHFT      &kp Z  &kp X  &kp C    &kp V     &kp B           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC  &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH     &kp RSHIFT
+                             &mo ADJ  &kp LGUI  &mt LALT ENTER  &kp SPACE            &mo NAV     &mo SYM   &kp SPACE            &kp RALT  &kp RGUI  &kp K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -61,10 +89,10 @@
         colemak_layer {
             display-name = "Colemak";
             bindings = <
-&mt GRAVE TAB  &kp Q            &kp W  &kp F   &kp P     &kp B                                                                         &kp J     &kp L     &kp U              &kp Y    &kp SV_SEMI        &kp BSPC
-&mt LCTRL ESC  &mt SV_A_RING A  &kp R  &kp S   &kp T     &kp G                                                                         &kp M     &kp N     &mt SV_A_UMLAUT E  &kp I    &mt SV_O_UMLAUT O  &mt RCTRL SV_DQT
-&kp LSHFT      &kp Z            &kp X  &kp C   &kp D     &kp V           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC &mt SV_RBKT SV_RBRC &kp K     &kp H     &kp COMMA          &kp DOT  &kp FSLH           &kp RSHIFT
-                                       &mo ADJ &kp LGUI  &mt LALT ENTER  &kp SPACE            &mo NAV     &mo SYM  &kp SPACE           &kp RALT  &kp RGUI  &kp K_APP
+&mt GRAVE ESC  &kp Q  &kp W  &kp F    &kp P     &kp B                                                                           &kp J     &kp L     &kp U      &kp Y    &kp SV_SEMI  &kp BSPC
+&mt LCTRL TAB  &kp A  &kp R  &kp S    &kp T     &kp G                                                                           &kp M     &kp N     &kp E      &kp I    &kp O        &mt RCTRL SV_DQT
+&kp LSHFT      &kp Z  &kp X  &kp C    &kp D     &kp V           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC  &kp K     &kp H     &kp COMMA  &kp DOT  &kp FSLH     &kp RSHIFT
+                             &mo ADJ  &kp LGUI  &mt LALT ENTER  &kp SPACE            &mo NAV     &mo SYM   &kp SPACE            &kp RALT  &kp RGUI  &kp K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -105,10 +133,20 @@
         adjust_layer {
             display-name = "Adjustment Layer";
             bindings = <
-&bt BT_PRV  &bt BT_NXT      &trans         &trans  &trans  &to QWE                                         &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR  &bt BT_CLR_ALL  &bt BT_DISC 0  &trans  &trans  &to COL                                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans          &trans         &trans  &trans  &trans  &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                           &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&bt BT_PRV  &bt BT_NXT      &trans         &trans  &trans  &to QWE                                          &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_CLR_ALL  &bt BT_DISC 0  &trans  &trans  &to COL                                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans          &trans         &trans  &trans  &trans   &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                           &trans  &trans  &trans   &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        tri_layer {
+            display-name = "Tri Layer";
+            bindings = <
+&trans  &trans &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
+&trans  &td0   &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans           &trans  &trans
+&trans  &trans &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
+                       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

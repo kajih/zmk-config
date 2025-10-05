@@ -44,6 +44,7 @@
         combo_nav {
             bindings = <&mo FUNC>;
             key-positions = <44 13>;
+            layers = <QWE COL>;
             slow-release;
         };
 
@@ -58,8 +59,8 @@
         mac0: anddo_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp SPACE &kp AMPS &kp AMPS &kp SPACE>;
-            label = "TEST_MACRO";
+            bindings = <&none &kp SPACE &kp SV_AMPS &kp SV_AMPS &kp SPACE>;
+            label = "&&_MACRO";
         };
     };
 

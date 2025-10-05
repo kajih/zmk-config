@@ -51,6 +51,7 @@
         combo_sym {
             bindings = <&mo SYM>;
             key-positions = <44 16>;
+            layers = <QWE COL>;
             slow-release;
         };
     };

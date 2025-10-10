@@ -12,6 +12,8 @@
 #define EXTRAS LF1 LF0 RF0 RF1                                                         // extra thumbs
 #define THUMBS LH4 LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4                                 // thumb keys
 
+#define MTW(layer) &mtw layer 0
+
 /* layers */
 #define QWE  0
 #define COL  1
@@ -33,6 +35,15 @@
           #binding-cells = <2>;
           bindings = <&kp>, <&kp>;
           display-name = "Mod-Tap";
+        };
+
+        mtw: mod_num_word {
+          compatible = "zmk,behavior-hold-tap";
+          flavor = "hold-preferred";
+          tapping-term-ms = <200>;
+          #binding-cells = <2>;
+          bindings = <&mo>, <&num_word>;
+          display-name = "Num-Word-Tap";
         };
 
         hml: hml_tap {
@@ -105,7 +116,7 @@
 &mt GRAVE ESC  &kp Q        &kp W        &kp E         &kp R          &kp T                                                                           &kp Y     &kp U          &kp I         &kp O        &kp P              &kp BSPC
 &mt LCTRL TAB  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                                                           &kp H     &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &mt RCTRL SV_DQT
 &kp LSHFT      &kp Z        &kp X        &kp C         &kp V          &kp B           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC  &kp N     &kp M          &kp COMMA     &kp DOT      &kp FSLH           &kp RSHIFT
-                                         &mo ADJ       &kp LGUI       &mt LALT ENTER  &kp SPACE            &mo NAV     &mo SYM   &kp SPACE            &kp RALT  &kp RGUI       &kp K_APP
+                                         &mo ADJ       &kp LGUI       &mt LALT ENTER  &kp SPACE            &mo NAV     MTW(SYM)  &kp SPACE            &kp RALT  &kp RGUI       &kp K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -117,7 +128,7 @@
 &mt GRAVE ESC  &kp Q        &kp W        &kp F         &kp P          &kp B                                                                           &kp J     &kp L          &kp U         &kp Y        &kp SV_SEMI  &kp BSPC
 &mt LCTRL TAB  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHIFT T  &kp G                                                                           &kp M     &hmr RSHIFT N  &hmr LCTRL E  &hmr LALT I  &hmr LGUI O  &mt RCTRL SV_DQT
 &kp LSHFT      &kp Z        &kp X        &kp C         &kp D          &kp V           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC  &kp K     &kp H          &kp COMMA     &kp DOT      &kp FSLH     &kp RSHIFT
-                                         &mo ADJ       &kp LGUI       &mt LALT ENTER  &kp SPACE            &mo NAV     &mo SYM   &kp SPACE            &kp RALT  &kp RGUI       &kp K_APP
+                                         &mo ADJ       &kp LGUI       &mt LALT ENTER  &kp SPACE            &mo NAV     MTW(SYM)  &kp SPACE            &kp RALT  &kp RGUI       &kp K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -129,7 +140,7 @@
 &mt SV_SQT SV_DQT  &kp N1       &kp N2        &kp N3       &kp N4               &kp N5                                                  &kp N6       &kp N7        &kp N8        &kp N9       &kp N0        &kp SV_EQUAL
 &kp SV_TILDE       &kp SV_EXCL  &kp SV_AT     &kp HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &kp SV_FSLH   &kp SV_LPAR   &kp SV_RPAR  &kp SV_STAR   &kp SV_PLUS
 &kp SV_PIPE        &kp SV_BSLH  &kp SV_COLON  &kp SV_SEMI  &kp SV_MINUS         &kp SV_LBKT   &kp SV_LBRC  &trans  &trans  &kp SV_RBRC  &kp SV_RBKT  &kp SV_UNDER  &kp SV_COMMA  &kp SV_DOT   &kp SV_CARET  &kp SV_QMARK
-                                              &trans       &trans               &trans        &num_word    &trans  &trans  &trans       &trans       &trans        &trans
+                                              &trans       &trans               &trans        &trans       &trans  &trans  &trans       &trans       &trans        &trans
             >;
         };
 

@@ -4,9 +4,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    - name: zmk-helpers
+      remote: urob
+    - name: zmk-auto-layer
+      remote: urob
   self:
     path: config

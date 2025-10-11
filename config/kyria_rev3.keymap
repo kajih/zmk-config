@@ -92,15 +92,15 @@
 
         combo_nav {
             bindings = <&mo FUNC>;
-            key-positions = <44 13>;
-            layers = <QWE COL>;
+            key-positions = <LH0 LM4>;
+            layers = <QWE QWEH COL COLH>;
             slow-release;
         };
 
         combo_sym {
             bindings = <&mo SYM>;
-            key-positions = <44 16>;
-            layers = <QWE COL>;
+            key-positions = <LH0 LM1>;
+            layers = <QWE QWEH COL COLH>;
             slow-release;
         };
     };

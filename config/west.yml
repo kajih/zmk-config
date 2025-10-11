@@ -12,7 +12,5 @@ manifest:
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
-    - name: zmk-auto-layer
-      remote: urob
   self:
     path: config

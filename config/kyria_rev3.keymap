@@ -19,12 +19,14 @@
 
 /* layers */
 #define QWE  0
-#define COL  1
-#define SYM  2
-#define NAV  3
-#define FUNC 4
-#define ADJ  5
-#define TRI  6
+#define QWEH 1 // Homerow Qwerty
+#define COL  2
+#define COLH 3 // Homerow Colemak
+#define SYM  4
+#define NAV  5
+#define FUNC 6
+#define ADJ  7
+#define TRI  8
 
 #define XXX &none
 #define ___ &trans
@@ -117,25 +119,45 @@
         qwerty_layer {
             display-name = "Qwerty";
             bindings = <
-&mt GRAVE ESC  &kp Q        &kp W        &kp E         &kp R          &kp T                                                                           &kp Y     &kp U          &kp I         &kp O        &kp P              &kp BSPC
-&mt LCTRL TAB  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                                                           &kp H     &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &mt RCTRL SV_DQT
-&kp LSHFT      &kp Z        &kp X        &kp C         &kp V          &kp B           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC       &mt SV_RBKT SV_RBRC  &kp N     &kp M          &kp COMMA     &kp DOT      &kp FSLH           &kp RSHIFT
-                                         &mo ADJ       &kp LGUI       &mt LALT ENTER  &kp SPACE            &mo NAV     SMART_SYM(SYM) &kp SPACE            &kp RALT  &kp RGUI       &kp K_APP
+&mt GRAVE ESC  &kp Q  &kp W  &kp E  &kp R   &kp T                                                                                &kp Y    &kp U      &kp I     &kp O     &kp P        &kp BSPC
+&mt LCTRL TAB  &kp A  &kp S  &kp D  &kp F   &kp G                                                                                &kp H    &kp J      &kp K     &kp L     &kp SV_SEMI  &mt RCTRL SV_DQT
+&kp LSHFT      &kp Z  &kp X  &kp C  &kp V   &kp B     &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC  &kp N      &kp M    &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
+                                    &mo ADJ &kp LGUI  &mt LALT ENTER       &kp SPACE   &mo NAV   SMART_SYM(SYM)       &kp SPACE  &kp RALT &kp RGUI   &kp K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
+        qwerty_homerow {
+            display-name = "Q H-ModKeys";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&mt LCTRL TAB  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G     &kp H   &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &mt RCTRL SV_DQT
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
         colemak_layer {
             display-name = "Colemak";
             bindings = <
-&mt GRAVE ESC  &kp Q        &kp W        &kp F         &kp P          &kp B                                                                           &kp J     &kp L          &kp U         &kp Y        &kp SV_SEMI  &kp BSPC
-&mt LCTRL TAB  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHIFT T  &kp G                                                                           &kp M     &hmr RSHIFT N  &hmr LCTRL E  &hmr LALT I  &hmr LGUI O  &mt RCTRL SV_DQT
-&kp LSHFT      &kp Z        &kp X        &kp C         &kp D          &kp V           &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC       &mt SV_RBKT SV_RBRC  &kp K     &kp H          &kp COMMA     &kp DOT      &kp FSLH     &kp RSHIFT
-                                         &mo ADJ       &kp LGUI       &mt LALT ENTER  &kp SPACE            &mo NAV     SMART_SYM(SYM) &kp SPACE            &kp RALT  &kp RGUI       &kp K_APP
+&mt GRAVE ESC  &kp Q  &kp W  &kp F  &kp P    &kp B                                                                               &kp J  &kp L                &kp U      &kp Y       &kp SV_SEMI  &kp BSPC
+&mt LCTRL TAB  &kp A  &kp R  &kp S  &kp T    &kp G                                                                               &kp M  &kp N      &kp E     &kp I      &kp O       &mt RCTRL SV_DQT
+&kp LSHFT      &kp Z  &kp X  &kp C  &kp D    &kp V     &mt SV_LBKT SV_LBRC  &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC  &kp K     &kp H  &kp COMMA  &kp DOT   &kp FSLH   &kp RSHIFT
+                                    &mo ADJ  &kp LGUI  &mt LALT ENTER       &kp SPACE   &mo NAV   SMART_SYM(SYM)       &kp SPACE        &kp RALT   &kp RGUI  &kp K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        colemak_homerow {
+            display-name = "C H-ModKeys";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&mt LCTRL TAB  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHIFT T  &kp G     &kp M   &hmr RSHIFT N  &hmr LCTRL E  &hmr LALT I  &hmr LGUI O  &mt RCTRL SV_DQT
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
         };
 
         symbol_layer {
@@ -174,9 +196,9 @@
             display-name = "Adjustment Layer";
             bindings = <
 &bt BT_PRV  &bt BT_NXT      &trans         &trans  &trans  &to QWE                                          &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR  &bt BT_CLR_ALL  &bt BT_DISC 0  &trans  &trans  &to COL                                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans          &trans         &trans  &trans  &trans   &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                           &trans  &trans  &trans   &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_CLR_ALL  &bt BT_DISC 0  &trans  &trans  &to QWEH                                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans          &trans         &trans  &trans  &to COL   &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                           &trans  &trans  &to COLH  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -189,5 +211,16 @@
                        &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
+/*
+        empty_layer {
+            display-name = "Empty Layer";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+*/
     };
 };

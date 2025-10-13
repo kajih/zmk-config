@@ -132,7 +132,7 @@
             display-name = "Q-ModKeys";
             bindings = <
 &trans  &trans       &trans       &trans        &trans         &trans                                  &trans  &trans         &trans        &trans       &trans             &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                   &kp H   &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &trans                                  &trans  &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
 &trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
                                   &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans
             >;
@@ -154,7 +154,7 @@
             display-name = "C-ModKeys";
             bindings = <
 &trans  &trans       &trans       &trans        &trans         &trans                                  &trans  &trans         &trans        &trans       &trans             &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                   &kp H   &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &trans                                  &trans  &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
 &trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
                                   &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans
             >;
@@ -163,10 +163,10 @@
         symbol_layer {
             display-name = "Symbol Layer";
             bindings = <
-&trans  &kp N1       &kp N2        &kp N3       &kp N4               &kp N5                                                  &kp N6       &kp N7        &kp N8        &kp N9       &kp N0        &trans
-&trans  &kp SV_EXCL  &kp SV_AT     &kp HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &kp SV_FSLH   &kp SV_LPAR   &kp SV_RPAR  &kp SV_STAR   &trans
-&trans  &kp SV_BSLH  &kp SV_COLON  &kp SV_SEMI  &kp SV_MINUS         &kp SV_LBKT   &kp SV_LBRC   &trans  &trans  &kp SV_RBRC &kp SV_RBKT  &kp SV_UNDER  &kp SV_COMMA  &kp SV_DOT   &kp SV_CARET  &trans
-                                   &trans       &trans               &trans        &trans        &trans  &trans  &trans      &trans       &trans        &trans
+&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &kp  SV_FSLH   &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
+&trans  &hml LGUI N1 &hml LALT N2  &hml LCTRL N3 &hml LSHIFT N4       &kp N5                                                  &kp N6       &hmr RSHIFT N7 &hmr LCTRL N8 &hmr LALT N9 &hmr LGUI N0  &trans
+&trans  &kp  SV_BSLH &kp  SV_COLON &kp  SV_SEMI  &kp SV_MINUS         &kp SV_LBKT   &kp SV_LBRC   &trans  &trans  &kp SV_RBRC &kp SV_RBKT  &kp  SV_UNDER  &kp  SV_COMMA &kp SV_DOT   &kp  SV_CARET &trans
+                                   &trans        &trans               &trans        &trans        &trans  &trans  &trans      &trans       &trans         &trans
             >;
         };
 
@@ -178,7 +178,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp SLCK  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &kp PSCRN
                         &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans     &trans
             >;
-
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 

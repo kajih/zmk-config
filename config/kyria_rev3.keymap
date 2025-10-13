@@ -129,12 +129,12 @@
         };
 
         qwerty_homerow {
-            display-name = "Q H-ModKeys";
+            display-name = "Q-ModKeys";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&mt LCTRL TAB  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G     &kp H   &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &mt RCTRL SV_DQT
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans       &trans        &trans         &trans                                  &trans  &trans         &trans        &trans       &trans             &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                   &kp H   &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
+&trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
+                                  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans
             >;
         };
 
@@ -151,22 +151,22 @@
         };
 
         colemak_homerow {
-            display-name = "C H-ModKeys";
+            display-name = "C-ModKeys";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&mt LCTRL TAB  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHIFT T  &kp G     &kp M   &hmr RSHIFT N  &hmr LCTRL E  &hmr LALT I  &hmr LGUI O  &mt RCTRL SV_DQT
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans       &trans        &trans         &trans                                  &trans  &trans         &trans        &trans       &trans             &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                   &kp H   &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
+&trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
+                                  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans
             >;
         };
 
         symbol_layer {
             display-name = "Symbol Layer";
             bindings = <
-&mt SV_SQT SV_DQT  &kp N1       &kp N2        &kp N3       &kp N4               &kp N5                                                  &kp N6       &kp N7        &kp N8        &kp N9       &kp N0        &kp SV_EQUAL
-&kp SV_TILDE       &kp SV_EXCL  &kp SV_AT     &kp HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &kp SV_FSLH   &kp SV_LPAR   &kp SV_RPAR  &kp SV_STAR   &kp SV_PLUS
-&kp SV_PIPE        &kp SV_BSLH  &kp SV_COLON  &kp SV_SEMI  &kp SV_MINUS         &kp SV_LBKT   &kp SV_LBRC   &trans  &trans  &kp SV_RBRC &kp SV_RBKT  &kp SV_UNDER  &kp SV_COMMA  &kp SV_DOT   &kp SV_CARET  &kp SV_QMARK
-                                              &trans       &trans               &trans        &trans        &trans  &trans  &trans      &trans       &trans        &trans
+&trans  &kp N1       &kp N2        &kp N3       &kp N4               &kp N5                                                  &kp N6       &kp N7        &kp N8        &kp N9       &kp N0        &trans
+&trans  &kp SV_EXCL  &kp SV_AT     &kp HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &kp SV_FSLH   &kp SV_LPAR   &kp SV_RPAR  &kp SV_STAR   &trans
+&trans  &kp SV_BSLH  &kp SV_COLON  &kp SV_SEMI  &kp SV_MINUS         &kp SV_LBKT   &kp SV_LBRC   &trans  &trans  &kp SV_RBRC &kp SV_RBKT  &kp SV_UNDER  &kp SV_COMMA  &kp SV_DOT   &kp SV_CARET  &trans
+                                   &trans       &trans               &trans        &trans        &trans  &trans  &trans      &trans       &trans        &trans
             >;
         };
 

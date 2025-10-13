@@ -6,6 +6,15 @@ CONFIG_ABS := $(abspath config)
 OUT_DIR := out
 DIST_DIR := dist
 
+#MODULES := \
+#	zmk-auto-layer \
+#	zmk-leader-key \
+# zmk-helpers \
+# zmk-tri-state \
+#	zmk-unicode
+
+MODULE_PATH := $(shell echo $(abspath $(MODULES)) | tr ' ' ';')
+
 # Exportera miljövariabeln så den gäller för alla regler
 export CMAKE_PREFIX_PATH := $(CONFIG_DIR)/zephyr:$(CMAKE_PREFIX_PATH)
 
@@ -24,6 +33,7 @@ update:
 	west zephyr-export
 
 # Bygg vänster halva
+#		-DZMK_EXTRA_MODULES="$(MODULE_PATH)" \
 left:
 	west build -d build/left -s $(ZMK_APP) -b nice_nano_v2 -S "studio-rpc-usb-uart" \
 		-- -DZMK_CONFIG=$(CONFIG_ABS) \
@@ -33,6 +43,7 @@ left:
 	cp build/left/zephyr/zmk.uf2 $(OUT_DIR)/firmware-kyria_rev3_left-nice_view_adapter-nice_view-nice_nano_v2-$(BUILD_DATE).uf2
 
 # Bygg höger halva
+#-DZMK_EXTRA_MODULES="$(MODULE_PATH)"
 right:
 	west build -d build/right -s $(ZMK_APP) -b nice_nano_v2 -S "studio-rpc-usb-uart" -- \
 		-DZMK_CONFIG=$(CONFIG_ABS) \

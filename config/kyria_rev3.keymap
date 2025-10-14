@@ -163,7 +163,7 @@
         symbol_layer {
             display-name = "Symbol Layer";
             bindings = <
-&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &mt  SV_FSLH SV_BSLH  &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
+&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &mt  SV_BSLH SV_FSLH  &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
 &trans  &hml LGUI N1 &hml LALT N2  &hml LCTRL N3 &hml LSHIFT N4       &kp N5                                                  &kp N6       &hmr RSHIFT N7        &hmr LCTRL N8 &hmr LALT N9 &hmr LGUI N0  &trans
 &trans  &kp  SV_PIPE &kp  SV_DQT   &kp  SV_PLUS  &kp SV_MINUS         &kp SV_LBKT   &kp SV_LBRC   &trans  &trans  &kp SV_RBRC &kp SV_RBKT  &kp  SV_UNDER         &kp  SV_COMMA &kp SV_DOT   &kp  SV_CARET &trans
                                    &trans        &trans               &trans        &trans        &trans  &trans  &trans      &trans       &trans                &trans

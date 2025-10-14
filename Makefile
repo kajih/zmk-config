@@ -15,7 +15,7 @@ export CMAKE_PREFIX_PATH := $(CONFIG_DIR)/zephyr:$(CMAKE_PREFIX_PATH)
 BUILD_DATE := $(shell date +"%Y%m%d-%H%M")
 
 # Standardmål
-all: left right
+all: left right svg
 
 init:
 	rm -rf .west
@@ -47,8 +47,13 @@ dist: all
 	mkdir -p $(DIST_DIR)
 	zip -j $(DIST_DIR)/firmware-$(BUILD_DATE).zip $(OUT_DIR)/*.uf2
 
+svg:
+	keymap -c keymapdrawer.yaml parse -z config/kyria_rev3.keymap -o kyria.yaml
+	keymap -c keymapdrawer.yaml draw -z kyria kyria.yaml -o kyria.svg
+	rm kyria.yaml
+
 clean:
-	rm -rf build $(OUT_DIR) $(DIST_DIR)
+	rm -rf build $(OUT_DIR) $(DIST_DIR) kyria.svg
 
 distclean:
 	rm -rf build modules zephyr zmk $(OUT_DIR) $(DIST_DIR)

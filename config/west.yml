@@ -10,5 +10,10 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+
+    - name: zmk-helpers
+      remote: urob
+      path: modules/zmk/helpers
+
   self:
     path: config

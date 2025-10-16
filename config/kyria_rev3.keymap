@@ -79,6 +79,14 @@
           hold-trigger-key-positions = <KEYS_L THUMBS>;
           hold-trigger-on-release;
         };
+
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
     };
 
     conditional_layers {
@@ -125,10 +133,10 @@
         qwerty_layer {
             display-name = "Qwerty";
             bindings = <
-&mt GRAVE ESC &kp Q  &kp W  &kp E  &kp R   &kp T                                                                            &kp Y    &kp U     &kp I     &kp O     &kp P        &kp BSPC
-&mt LCTRL TAB &kp A  &kp S  &kp D  &kp F   &kp G                                                                            &kp H    &kp J     &kp K     &kp L     &kp SV_SEMI  &mt RCTRL SV_DQT
-&kp LSHFT     &kp Z  &kp X  &kp C  &kp V   &kp B    &mt SV_LBKT SV_LBRC &caps_word  &mo FUNC  &mt SV_RBKT SV_RBRC &kp N     &kp M    &kp COMMA &kp DOT   &kp FSLH  &kp RSHIFT
-                                   &mo ADJ &kp LGUI &mt LALT ENTER      &kp SPACE   &mo NAV   SMART_SYM(SYM)      &kp SPACE &kp RALT &kp RGUI  &kp K_APP
+&mt GRAVE ESC &kp Q  &kp W  &kp E  &kp R   &kp T                                                                                         &kp Y    &kp U     &kp I     &kp O     &kp P        &kp BSPC
+&mt LCTRL TAB &kp A  &kp S  &kp D  &kp F   &kp G                                                /**/                                     &kp H    &kp J     &kp K     &kp L     &kp SV_SEMI  &mt RCTRL SV_DQT
+&kp LSHFT     &kp Z  &kp X  &kp C  &kp V   &kp B    &mt SV_LBKT SV_LBRC &caps_word              /**/  &mo FUNC       &mt SV_RBKT SV_RBRC &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH     &kp RSHIFT
+                                   &mo ADJ &kp LGUI &kp SPACE           &mt LALT ENTER &mo NAV  /**/  SMART_SYM(SYM) &bspc_del           &kp SPACE &kp RALT &kp RGUI
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -136,20 +144,20 @@
         qwerty_homerow {
             display-name = "Q-ModKeys";
             bindings = <
-&trans  &trans      &trans      &trans       &trans        &trans                                  &trans  &trans        &trans       &trans      &trans            &trans
-&trans  &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHIFT F &trans                                  &trans  &hmr RSHIFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SV_SEMI &trans
-&trans  &trans      &trans      &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans      &trans            &trans
-                                &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans
+&trans  &trans      &trans      &trans       &trans        &trans                                        &trans  &trans        &trans       &trans      &trans            &trans
+&trans  &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHIFT F &trans                  /**/                  &trans  &hmr RSHIFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SV_SEMI &trans
+&trans  &trans      &trans      &trans       &trans        &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans        &trans       &trans      &trans            &trans
+                                &trans       &trans        &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans        &trans
             >;
         };
 
         colemak_layer {
             display-name = "Colemak";
             bindings = <
-&mt GRAVE ESC &kp Q  &kp W  &kp F   &kp P    &kp B                                                                               &kp J     &kp L     &kp U     &kp Y   &kp SV_SEMI &kp BSPC
-&mt LCTRL TAB &kp A  &kp R  &kp S   &kp T    &kp G                                                                               &kp M     &kp N     &kp E     &kp I   &kp O       &mt RCTRL SV_DQT
-&kp LSHFT     &kp Z  &kp X  &kp C   &kp D    &kp V           &mt SV_LBKT SV_LBRC  &caps_word &mo FUNC       &mt SV_RBKT SV_RBRC  &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH    &kp RSHIFT
-                            &mo ADJ &kp LGUI &mt LALT ENTER  &kp SPACE            &mo NAV    SMART_SYM(SYM) &kp SPACE            &kp RALT  &kp RGUI  &kp K_APP
+&mt GRAVE ESC &kp Q  &kp W  &kp F   &kp P    &kp B                                                                                      &kp J     &kp L     &kp U     &kp Y   &kp SV_SEMI &kp BSPC
+&mt LCTRL TAB &kp A  &kp R  &kp S   &kp T    &kp G                                             /**/                                     &kp M     &kp N     &kp E     &kp I   &kp O       &mt RCTRL SV_DQT
+&kp LSHFT     &kp Z  &kp X  &kp C   &kp D    &kp V            &mt SV_LBKT SV_LBRC  &caps_word  /**/  &mo FUNC       &mt SV_RBKT SV_RBRC &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH    &kp RSHIFT
+                                   &mo ADJ &kp LGUI &kp SPACE &mt LALT ENTER       &mo NAV     /**/  SMART_SYM(SYM) &kp BSPC            &kp SPACE &kp RALT &kp RGUI
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -157,30 +165,30 @@
         colemak_homerow {
             display-name = "C-ModKeys";
             bindings = <
-&trans  &trans       &trans       &trans        &trans         &trans                                  &trans  &trans         &trans        &trans       &trans             &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &trans                                  &trans  &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
-&trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
-                                  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &trans       &trans       &trans        &trans         &trans                                        &trans  &trans         &trans        &trans       &trans             &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &trans                  /**/                  &trans  &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
+&trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
+                                  &trans        &trans         &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans         &trans
             >;
         };
 
         symbol_layer {
             display-name = "Symbol Layer";
             bindings = <
-&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                            &kp SV_AMPS  &mt  SV_BSLH SV_FSLH  &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
-&trans  &hml LGUI N1 &hml LALT N2  &hml LCTRL N3 &hml LSHIFT N4       &kp N5                                                  &kp N6       &hmr RSHIFT N7        &hmr LCTRL N8 &hmr LALT N9 &hmr LGUI N0  &trans
-&trans  &kp  SV_PIPE &kp  SV_DQT   &kp  SV_PLUS  &kp SV_MINUS         &kp SV_LBKT   &kp SV_RBKT   &trans  &trans  &kp SV_LBRC &kp SV_RBRC  &kp  SV_UNDER         &kp  SV_COMMA &kp SV_DOT   &kp  SV_CARET &trans
-                                   &trans        &trans               &trans        &trans        &trans  &trans  &trans      &trans       &trans                &trans
+&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                                  &kp SV_AMPS  &mt  SV_BSLH SV_FSLH  &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
+&trans  &hml LGUI N1 &hml LALT N2  &hml LCTRL N3 &hml LSHIFT N4       &kp N5                              /**/                      &kp N6       &hmr RSHIFT N7        &hmr LCTRL N8 &hmr LALT N9 &hmr LGUI N0  &trans
+&trans  &kp  SV_PIPE &kp  SV_DQT   &kp  SV_PLUS  &kp SV_MINUS         &kp SV_LBKT   &kp SV_RBKT   &trans  /**/  &trans  &kp SV_LBRC &kp SV_RBRC  &kp  SV_UNDER         &kp  SV_COMMA &kp SV_DOT   &kp  SV_CARET &trans
+                                   &trans        &trans               &trans        &trans        &trans  /**/  &trans  &trans      &trans       &trans                &trans
             >;
         };
 
         navigation_layer {
             display-name = "Navigation Layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &kp DEL   &trans  
-&trans  &trans  &trans  &trans  &trans  &trans                                    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT &kp INS   &trans 
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp SLCK  &trans  &trans  &trans    &trans     &trans     &trans    &kp PSCRN &trans 
-                        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &kp DEL   &trans  
+&trans  &trans  &trans  &trans  &trans  &trans                    /**/                  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT &kp INS   &trans 
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp SLCK  /**/  &trans  &trans  &trans    &trans     &trans     &trans    &kp PSCRN &trans 
+                        &trans  &trans  &trans  &trans  &trans    /**/  &trans  &trans  &trans    &trans     &trans
             >;
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
@@ -188,30 +196,30 @@
         function_layer {
             display-name = "Function Layer";
             bindings = <
-&kp SV_UMLAUT &trans  &kp F1  &kp F2   &kp F3   &kp F4                                   &mkp MB3        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB4         &kp SV_LBRC   &kp SV_RBRC
-&trans        &trans  &kp F5  &kp F6   &kp F7   &kp F8                                   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp SV_LT     &kp SV_GT
-&trans        &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans          &mkp MB1        &mkp MB2      &trans           &kp SV_GRAVE  &kp SV_ACUTE
-                              &trans   &trans   &kp LALT &trans  &trans  &trans  &trans  &trans          &trans          &trans
+&kp SV_UMLAUT &trans  &kp F1  &kp F2   &kp F3   &kp F4                                         &mkp MB3        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB4         &kp SV_LBRC   &kp SV_RBRC
+&trans        &trans  &kp F5  &kp F6   &kp F7   &kp F8                   /**/                  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp SV_LT     &kp SV_GT
+&trans        &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  /**/  &trans  &trans  &trans          &mkp MB1        &mkp MB2      &trans           &kp SV_GRAVE  &kp SV_ACUTE
+                              &trans   &trans   &kp LALT &trans  &trans  /**/  &trans  &trans  &trans          &trans          &trans
             >;
         };
 
         adjust_layer {
             display-name = "Adjustment Layer";
             bindings = <
-&bt BT_PRV  &bt BT_NXT      &trans         &trans  &trans  &to QWE                                           &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR  &bt BT_CLR_ALL  &bt BT_DISC 0  &trans  &trans  &to QWEH                                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans          &trans         &trans  &trans  &to COL   &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                           &trans  &trans  &to COLH  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&bt BT_PRV  &bt BT_NXT      &trans         &trans  &trans  &to QWE                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_CLR_ALL  &bt BT_DISC 0  &trans  &trans  &to QWEH                          /**/                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans          &trans         &trans  &trans  &to COL   &trans  &studio_unlock  /**/   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                           &trans  &trans  &to COLH  &trans  &trans          /**/   &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         tri_layer {
             display-name = "Tri Layer";
             bindings = <
-&trans  &trans         &trans          &trans  &trans  &trans                                  &mac0   &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
-&trans  &kp SV_A_RING  &kp SV_A_UMLAUT &trans  &trans  &trans                                  &trans  &trans  &trans  &trans           &trans  &trans
-&trans  &trans         &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
-                       &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans          &trans  &trans  &trans                                        &mac0   &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
+&trans  &kp SV_A_RING  &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &trans  &trans  &trans  &trans           &trans  &trans
+&trans  &trans         &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
+                       &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans
             >;
         };
 /*

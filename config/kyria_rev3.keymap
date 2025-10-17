@@ -30,7 +30,7 @@
 #define ADJ  7
 #define TRI  8
 
-#define XXX &none
+#define XXXXX &none
 #define ___ &trans
 
 / {
@@ -216,10 +216,10 @@
         tri_layer {
             display-name = "Tri Layer";
             bindings = <
-&trans  &trans         &trans          &trans  &trans  &trans                                        &mac0   &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
-&trans  &kp SV_A_RING  &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &trans  &trans  &trans  &trans           &trans  &trans
-&trans  &trans         &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
-                       &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans
+XXXXX     XXXXX         &trans          &trans  &trans  &trans                                        &mac0   &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
+XXXXX     &kp SV_A_RING &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &trans  &trans  &trans  &trans           &trans  &trans
+&trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
+                        &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans
             >;
         };
 /*

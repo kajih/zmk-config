@@ -131,44 +131,44 @@
         compatible = "zmk,keymap";
 
         qwerty_layer {
-            display-name = "Qwerty";
+            display-name = "Qwerty-Mod";
             bindings = <
-&mt GRAVE ESC  &kp Q  &kp W  &kp E  &kp R   &kp T                                                                                    &kp Y     &kp U     &kp I     &kp O     &kp P        &kp BSPC
-&mt LSHIFT TAB &kp A  &kp S  &kp D  &kp F   &kp G                                           /**/                                     &kp H     &kp J     &kp K     &kp L     &kp SV_SEMI  &mt RSHIFT SV_DQT
-&kp LCTRL      &kp Z  &kp X  &kp C  &kp V   &kp B    &mt SV_LBKT SV_LBRC &caps_word         /**/  &mo FUNC       &mt SV_RBKT SV_RBRC &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH     &kp RCTRL
-                                   &mo ADJ &kp LGUI &mt LALT ENTER      &kp SPACE &mo NAV  /**/  SMART_SYM(SYM) &kp SPACE           &bspc_del &kp RALT &kp RGUI
+&mt GRAVE ESC  &kp Q       &kp W       &kp E        &kp R          &kp T                                                                                   &kp Y     &kp U         &kp I        &kp O       &kp P             &kp BSPC
+&mt LSHIFT TAB &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHIFT F  &kp G                                          /**/                                     &kp H     &hmr RSHIFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SV_SEMI &mt RSHIFT SV_DQT
+&kp LCTRL      &kp Z       &kp X       &kp C        &kp V          &kp B          &mt SV_LBKT SV_LBRC &caps_word  /**/  &mo FUNC       &mt SV_RBKT SV_RBRC &kp N     &kp M         &kp COMMA    &kp DOT     &kp FSLH          &kp RCTRL
+                                       &mo ADJ      &kp LGUI       &mt LALT ENTER &kp SPACE           &mo NAV     /**/  SMART_SYM(SYM) &kp SPACE           &bspc_del &kp RALT      &kp RGUI
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         qwerty_homerow {
-            display-name = "Q-ModKeys";
+            display-name = "Qwerty";
             bindings = <
-&trans  &trans      &trans      &trans       &trans        &trans                                        &trans  &trans        &trans       &trans      &trans            &trans
-&trans  &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHIFT F &trans                  /**/                  &trans  &hmr RSHIFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SV_SEMI &trans
-&trans  &trans      &trans      &trans       &trans        &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans        &trans       &trans      &trans            &trans
-                                &trans       &trans        &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans        &trans
+&trans  &trans &trans &trans &trans &trans                                      &trans  &trans &trans &trans &trans      &trans
+&trans  &kp A  &kp S  &kp D  &kp F  &trans                /**/                  &trans  &kp J  &kp K  &kp L  &kp SV_SEMI &trans
+&trans  &trans &trans &trans &trans &trans &trans &trans  /**/  &trans  &trans  &trans  &trans &trans &trans &trans      &trans
+                      &trans &trans &trans &trans &trans  /**/  &trans  &trans  &trans  &trans &trans
             >;
         };
 
         colemak_layer {
-            display-name = "Colemak";
+            display-name = "Cole-Mod";
             bindings = <
-&mt GRAVE ESC  &kp Q  &kp W  &kp F  &kp P   &kp B                                                                                    &kp J     &kp L     &kp U     &kp Y   &kp SV_SEMI &kp BSPC
-&mt LSHIFT TAB &kp A  &kp R  &kp S  &kp T   &kp G                                           /**/                                     &kp M     &kp N     &kp E     &kp I   &kp O       &mt RSHIFT SV_DQT
-&kp LCTRL      &kp Z  &kp X  &kp C  &kp D   &kp V    &mt SV_LBKT SV_LBRC &caps_word         /**/  &mo FUNC       &mt SV_RBKT SV_RBRC &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH    &kp RCTRL
-                                   &mo ADJ &kp LGUI &mt LALT ENTER      &kp SPACE &mo NAV  /**/  SMART_SYM(SYM) &kp SPACE           &bspc_del &kp RALT &kp RGUI
+&mt GRAVE ESC  &kp Q       &kp W       &kp F        &kp P          &kp B                                                                                   &kp J     &kp L         &kp U        &kp Y       &kp SV_SEMI &kp BSPC
+&mt LSHIFT TAB &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHIFT T  &kp G                                          /**/                                     &kp M     &hmr RSHIFT N &hmr LCTRL E &hmr LALT I &hmr LGUI O &mt RSHIFT SV_DQT
+&kp LCTRL      &kp Z       &kp X       &kp C        &kp D          &kp V          &mt SV_LBKT SV_LBRC &caps_word  /**/  &mo FUNC       &mt SV_RBKT SV_RBRC &kp K     &kp H         &kp COMMA    &kp DOT     &kp FSLH    &kp RCTRL
+                                       &mo ADJ      &kp LGUI       &mt LALT ENTER &kp SPACE           &mo NAV     /**/  SMART_SYM(SYM) &kp SPACE           &bspc_del &kp RALT      &kp RGUI
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         colemak_homerow {
-            display-name = "C-ModKeys";
+            display-name = "Colemack";
             bindings = <
-&trans  &trans       &trans       &trans        &trans         &trans                                        &trans  &trans         &trans        &trans       &trans             &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &trans                  /**/                  &trans  &hmr RSHIFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SV_SEMI  &trans
-&trans  &trans       &trans       &trans        &trans         &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans         &trans        &trans       &trans             &trans
-                                  &trans        &trans         &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans         &trans
+&trans  &trans &trans &trans &trans  &trans                                                &trans  &trans &trans &trans &trans &trans
+&trans  &kp A  &kp R  &kp S  &kp T   &trans                          /**/                  &trans  &kp N  &kp E  &kp I  &kp O  &trans
+&trans  &trans &trans &trans &trans  &trans  &trans  &trans          /**/  &trans  &trans  &trans  &trans &trans &trans &trans &trans
+                             &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans &trans
             >;
         };
 

@@ -124,8 +124,8 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 </style>
-<g transform="translate(30, 0)" class="layer-Qwerty-Mod">
-<text x="0" y="28" class="label" id="Qwerty-Mod">Qwerty-Mod:</text>
+<g transform="translate(30, 0)" class="layer-Qwe-Mod">
+<text x="0" y="28" class="label" id="Qwe-Mod">Qwe-Mod:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 70)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -325,18 +325,14 @@ path.combo {
 </g>
 <g transform="translate(389, 278) rotate(45.0)" class="key keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">TAB</text>
 <a href="#Navigation-Layer">
-<text x="0" y="0" class="key tap layer-activator">
-<tspan x="0" dy="-0.6em" style="font-size: 70%">Navigation</tspan><tspan x="0" dy="1.2em" style="font-size: 70%">Layer</tspan>
-</text>
+<text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 64%">Navigation…</tspan></text>
 </a></g>
 <g transform="translate(563, 278) rotate(-45.0)" class="key keypos-45">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">ESC</text>
 <a href="#Symbol-Layer">
-<text x="0" y="0" class="key tap layer-activator">
-<tspan x="0" dy="-1.2em">Symbol</tspan><tspan x="0" dy="1.2em">Layer</tspan>
-</text>
-</a><a href="#Symbol-Layer">
 <text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 64%">Symbol Lay…</tspan></text>
 </a></g>
 <g transform="translate(611, 241) rotate(-30.0)" class="key keypos-46">
@@ -374,12 +370,6 @@ path.combo {
 <tspan x="321" dy="-0.6em">Symbol</tspan><tspan x="321" dy="1.2em">Layer</tspan>
 </text>
 </a></g>
-<g class="combo combopos-2">
-<path d="M349,164 l34,97" class="combo"/>
-<path d="M349,164 l-34,-97" class="combo"/>
-<rect rx="6" ry="6" x="335" y="151" width="28" height="26" class="combo"/>
-<text x="349" y="164" class="combo tap">ESC</text>
-</g>
 </g>
 </g>
 <g transform="translate(30, 374)" class="layer-Qwerty">
@@ -603,12 +593,6 @@ path.combo {
 <tspan x="321" dy="-0.6em">Symbol</tspan><tspan x="321" dy="1.2em">Layer</tspan>
 </text>
 </a></g>
-<g class="combo combopos-2">
-<path d="M349,164 l34,97" class="combo"/>
-<path d="M349,164 l-34,-97" class="combo"/>
-<rect rx="6" ry="6" x="335" y="151" width="28" height="26" class="combo"/>
-<text x="349" y="164" class="combo tap">ESC</text>
-</g>
 </g>
 </g>
 <g transform="translate(30, 748)" class="layer-Cole-Mod">
@@ -812,18 +796,14 @@ path.combo {
 </g>
 <g transform="translate(389, 278) rotate(45.0)" class="key keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">TAB</text>
 <a href="#Navigation-Layer">
-<text x="0" y="0" class="key tap layer-activator">
-<tspan x="0" dy="-0.6em" style="font-size: 70%">Navigation</tspan><tspan x="0" dy="1.2em" style="font-size: 70%">Layer</tspan>
-</text>
+<text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 64%">Navigation…</tspan></text>
 </a></g>
 <g transform="translate(563, 278) rotate(-45.0)" class="key keypos-45">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">ESC</text>
 <a href="#Symbol-Layer">
-<text x="0" y="0" class="key tap layer-activator">
-<tspan x="0" dy="-1.2em">Symbol</tspan><tspan x="0" dy="1.2em">Layer</tspan>
-</text>
-</a><a href="#Symbol-Layer">
 <text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 64%">Symbol Lay…</tspan></text>
 </a></g>
 <g transform="translate(611, 241) rotate(-30.0)" class="key keypos-46">
@@ -861,16 +841,10 @@ path.combo {
 <tspan x="321" dy="-0.6em">Symbol</tspan><tspan x="321" dy="1.2em">Layer</tspan>
 </text>
 </a></g>
-<g class="combo combopos-2">
-<path d="M349,164 l34,97" class="combo"/>
-<path d="M349,164 l-34,-97" class="combo"/>
-<rect rx="6" ry="6" x="335" y="151" width="28" height="26" class="combo"/>
-<text x="349" y="164" class="combo tap">ESC</text>
 </g>
 </g>
-</g>
-<g transform="translate(30, 1122)" class="layer-Colemack">
-<text x="0" y="28" class="label" id="Colemack">Colemack:</text>
+<g transform="translate(30, 1122)" class="layer-Colemak">
+<text x="0" y="28" class="label" id="Colemak">Colemak:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 70)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1090,12 +1064,6 @@ path.combo {
 <tspan x="321" dy="-0.6em">Symbol</tspan><tspan x="321" dy="1.2em">Layer</tspan>
 </text>
 </a></g>
-<g class="combo combopos-2">
-<path d="M349,164 l34,97" class="combo"/>
-<path d="M349,164 l-34,-97" class="combo"/>
-<rect rx="6" ry="6" x="335" y="151" width="28" height="26" class="combo"/>
-<text x="349" y="164" class="combo tap">ESC</text>
-</g>
 </g>
 </g>
 <g transform="translate(30, 1496)" class="layer-Symbol Layer">
@@ -1830,10 +1798,9 @@ path.combo {
 </g>
 <g transform="translate(308, 105)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Qwerty-</tspan><tspan x="0" dy="1.2em">Mod</tspan>
-</text>
-<text x="0" y="24" class="key hold">toggle</text>
+<a href="#Qwe-Mod">
+<text x="0" y="0" class="key tap layer-activator">Qwe-Mod</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(644, 105)" class="key trans keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1881,8 +1848,8 @@ path.combo {
 </g>
 <g transform="translate(308, 161)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<a href="#Colemack">
-<text x="0" y="0" class="key tap layer-activator"><tspan style="font-size: 88%">Colemack</tspan></text>
+<a href="#Colemak">
+<text x="0" y="0" class="key tap layer-activator">Colemak</text>
 </a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(369, 193) rotate(30.0)" class="key trans keypos-30">
@@ -2042,9 +2009,13 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(644, 105)" class="key trans keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(644, 105)" class="key keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<a href="#Symbol-Layer">
+<text x="0" y="0" class="key tap layer-activator">
+<tspan x="0" dy="-1.2em">Symbol</tspan><tspan x="0" dy="1.2em">Layer</tspan>
+</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(700, 98)" class="key trans keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>

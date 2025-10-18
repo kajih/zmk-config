@@ -14,7 +14,7 @@
 #define THUMBS LH4 LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4
 
 #define HM_TAPPING_TERM 200      // for non homerow tap
-#define HM_TAPPING_TERM_FAST 120 // double tap for key repeating
+#define HM_TAPPING_TERM_FAST 140 // double tap for key repeating
 #define HM_PRIOR_IDLE 220        // 150 is about 80 wpm
 
 #define SMART_SYM(layer) &sym_smart layer layer
@@ -63,7 +63,7 @@
           tapping-term-ms = <280>;
           quick-tap-ms = <HM_TAPPING_TERM_FAST>;
           bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_L THUMBS>;
+          hold-trigger-key-positions = <KEYS_R THUMBS>;
           hold-trigger-on-release;
         };
 
@@ -89,7 +89,7 @@
           tapping-term-ms = <280>;
           quick-tap-ms = <HM_TAPPING_TERM_FAST>;
           bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_R THUMBS>;
+          hold-trigger-key-positions = <KEYS_L THUMBS>;
           hold-trigger-on-release;
         };
 

@@ -31,7 +31,7 @@
 #define TRI  8
 
 #define XXXXX &none
-#define ___ &trans
+#define ___   &trans
 
 / {
     behaviors {
@@ -127,7 +127,7 @@
             layers = <QWE QWEH COL COLH>;
             timeout-ms = <100>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            bindings = <&mo SYM>;
+            bindings = <&tog SYM>;
             slow-release;
         };
 
@@ -230,10 +230,10 @@
         tri_layer {
             display-name = "Tri Layer";
             bindings = <
-&bootloader XXXXX         &trans          &trans  &trans  &trans                                        &mac0    &trans  &trans  &kp SV_O_UMLAUT &trans  &bootloader 
-XXXXX       &kp SV_A_RING &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &tog SYM &trans  &trans  &trans          &trans  &trans
-&trans      &trans        &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans   &trans  &trans  &trans          &trans  &trans
-                          &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans   &trans
+&bootloader XXXXX         &trans          &trans  &trans  &trans                                        &mac0   &trans  &trans  &kp SV_O_UMLAUT &trans  &bootloader 
+XXXXX       &kp SV_A_RING &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &trans  &trans  &trans  &trans          &trans  &trans
+&trans      &trans        &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
+                          &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans
             >;
         };
 /*

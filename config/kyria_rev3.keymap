@@ -20,10 +20,10 @@
 #define SMART_SYM(layer) &sym_smart layer layer
 
 /* layers */
-#define QWE  0
-#define QWEH 1 // Homerow Qwerty
-#define COL  2
-#define COLH 3 // Homerow Colemak
+#define QWEH 0 // Homerow Qwerty
+#define QWE  1
+#define COLH 2 // Homerow Colemak
+#define COL  3
 #define SYM  4
 #define NAV  5
 #define FUNC 6
@@ -101,22 +101,32 @@
         compatible = "zmk,combos";
 
         combo_nav {
-            bindings = <&mo FUNC>;
             key-positions = <LH0 LM4>;
             layers = <QWE QWEH COL COLH>;
             timeout-ms = <100>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            bindings = <&mo FUNC>;
             slow-release;
         };
 
         combo_sym {
-            bindings = <&mo SYM>;
             key-positions = <LH0 LM1>;
             layers = <QWE QWEH COL COLH>;
             timeout-ms = <100>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            bindings = <&mo SYM>;
             slow-release;
         };
+
+        combo_esc {
+            key-positions = <LH0 LT0>;
+            layers = <QWE QWEH COL COLH>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            bindings = <&kp ESC>;
+            slow-release;
+        };
+
     };
 
     macros {
@@ -216,10 +226,10 @@
         tri_layer {
             display-name = "Tri Layer";
             bindings = <
-XXXXX     XXXXX         &trans          &trans  &trans  &trans                                        &mac0   &trans  &trans  &kp SV_O_UMLAUT  &trans  &trans
-XXXXX     &kp SV_A_RING &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &trans  &trans  &trans  &trans           &trans  &trans
-&trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans
-                        &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans
+&bootloader XXXXX         &trans          &trans  &trans  &trans                                        &mac0   &trans  &trans  &kp SV_O_UMLAUT &trans  &bootloader 
+XXXXX       &kp SV_A_RING &kp SV_A_UMLAUT &trans  &trans  &trans                  /**/                  &trans  &trans  &trans  &trans          &trans  &trans
+&trans      &trans        &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans
+                          &trans          &trans  &trans  &trans  &trans  &trans  /**/  &trans  &trans  &trans  &trans
             >;
         };
 /*

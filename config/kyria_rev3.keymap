@@ -67,6 +67,19 @@
           hold-trigger-on-release;
         };
 
+       hmr: hmr_tap {
+          display-name = "Homerow Right";
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "balanced";
+          require-prior-idle-ms = <HM_PRIOR_IDLE>;
+          tapping-term-ms = <280>;
+          quick-tap-ms = <HM_TAPPING_TERM_FAST>;
+          bindings = <&kp>, <&kp>;
+          hold-trigger-key-positions = <KEYS_L THUMBS>;
+          hold-trigger-on-release;
+        };
+
         hol: hol_tap {
           display-name = "Homerow Left";
           compatible = "zmk,behavior-hold-tap";
@@ -80,19 +93,20 @@
           hold-trigger-on-release;
         };
 
-        hmr: hmr_tap {
-          display-name = "Homerow Right";
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          require-prior-idle-ms = <HM_PRIOR_IDLE>;
-          tapping-term-ms = <280>;
-          quick-tap-ms = <HM_TAPPING_TERM_FAST>;
-          bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_L THUMBS>;
-          hold-trigger-on-release;
+        sbkt: shift_brkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SV_LBKT>, <&kp SV_RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        sbrc: shift_brc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SV_LBRC>, <&kp SV_RBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+ 
         bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -147,10 +161,10 @@
         qwerty_layer {
             display-name = "Qwe-Mod";
             bindings = <
-&mt GRAVE ESC  &kp Q       &kp W       &kp E        &kp R          &kp T                                                                                   &kp Y     &kp U         &kp I        &kp O       &kp P             &kp BSPC
-&mt LSHIFT TAB &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHIFT F  &kp G                                            /**/                                   &kp H     &hmr RSHIFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SV_SEMI &mt RSHIFT SV_DQT
-&kp LCTRL      &kp Z       &kp X       &kp C        &kp V          &kp B          &mt SV_LBKT SV_LBRC &caps_word    /**/  &mo FUNC     &mt SV_RBKT SV_RBRC &kp N     &kp M         &kp COMMA    &kp DOT     &kp FSLH          &kp RCTRL
-                                       &mo ADJ      &kp LGUI       &mt LALT ENTER &kp SPACE           &hol NAV ESC  /**/  &hol SYM TAB &kp SPACE           &bspc_del &kp RALT      &kp RGUI
+&mt GRAVE ESC  &kp Q       &kp W       &kp E        &kp R          &kp T                                                                &kp Y &kp U          &kp I        &kp O       &kp P             &kp BSPC
+&mt LSHIFT TAB &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHIFT F  &kp G                                  /**/                          &kp H &hmr RSHIFT J  &hmr LCTRL K &hmr LALT L &hmr LGUI SV_SEMI &mt RSHIFT SV_DQT
+&kp LCTRL      &kp Z       &kp X       &kp C        &kp V          &kp B          &sbkt      &caps_word   /**/ &mo FUNC     &sbrc       &kp N &kp M          &kp COMMA    &kp DOT     &kp FSLH          &kp RCTRL
+                                       &mo ADJ      &kp LGUI       &mt LALT ENTER &kp SPACE  &hol NAV ESC /**/ &hol SYM TAB &kp SPACE   &bspc_del &kp RALT   &kp RGUI
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -168,10 +182,10 @@
         colemak_layer {
             display-name = "Cole-Mod";
             bindings = <
-&mt GRAVE ESC  &kp Q       &kp W       &kp F        &kp P          &kp B                                                                                   &kp J     &kp L         &kp U        &kp Y       &kp SV_SEMI &kp BSPC
-&mt LSHIFT TAB &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHIFT T  &kp G                                            /**/                                   &kp M     &hmr RSHIFT N &hmr LCTRL E &hmr LALT I &hmr LGUI O &mt RSHIFT SV_DQT
-&kp LCTRL      &kp Z       &kp X       &kp C        &kp D          &kp V          &mt SV_LBKT SV_LBRC &caps_word    /**/  &mo FUNC     &mt SV_RBKT SV_RBRC &kp K     &kp H         &kp COMMA    &kp DOT     &kp FSLH    &kp RCTRL
-                                       &mo ADJ      &kp LGUI       &mt LALT ENTER &kp SPACE           &hol NAV ESC  /**/  &hol SYM TAB &kp SPACE           &bspc_del &kp RALT      &kp RGUI
+&mt GRAVE ESC  &kp Q       &kp W       &kp F        &kp P          &kp B                                                                 &kp J     &kp L         &kp U        &kp Y       &kp SV_SEMI &kp BSPC
+&mt LSHIFT TAB &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHIFT T  &kp G                                   /**/                          &kp M     &hmr RSHIFT N &hmr LCTRL E &hmr LALT I &hmr LGUI O &mt RSHIFT SV_DQT
+&kp LCTRL      &kp Z       &kp X       &kp C        &kp D          &kp V          &sbkt      &caps_word    /**/  &mo FUNC     &sbrc      &kp K     &kp H         &kp COMMA    &kp DOT     &kp FSLH    &kp RCTRL
+                                       &mo ADJ      &kp LGUI       &mt LALT ENTER &kp SPACE  &hol NAV ESC  /**/  &hol SYM TAB &kp SPACE  &bspc_del &kp RALT      &kp RGUI
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -189,10 +203,10 @@
         symbol_layer {
             display-name = "Symbol Layer";
             bindings = <
-&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                                  &kp SV_AMPS  &mt  SV_BSLH SV_FSLH  &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
-&trans  &hml LGUI N1 &hml LALT N2  &hml LCTRL N3 &hml LSHIFT N4       &kp N5                              /**/                      &kp N6       &hmr RSHIFT N7        &hmr LCTRL N8 &hmr LALT N9 &hmr LGUI N0  &trans
-&trans  &kp  SV_PIPE &kp  SV_DQT   &kp  SV_PLUS  &kp SV_MINUS         &kp SV_LBKT   &kp SV_RBKT   &trans  /**/  &trans  &kp SV_LBRC &kp SV_RBRC  &kp  SV_UNDER         &kp  SV_COMMA &kp SV_DOT   &kp  SV_CARET &trans
-                                   &trans        &trans               &trans        &trans        &trans  /**/  &trans  &trans      &trans       &trans                &trans
+&trans  &kp  SV_EXCL &kp  SV_AT    &kp  HASH     &mt SV_EURO SV_DLLR  &kp SV_PRCNT                                        &kp SV_AMPS  &mt  SV_BSLH SV_FSLH  &kp  SV_LPAR  &kp SV_RPAR  &kp  SV_STAR  &trans
+&trans  &hml LGUI N1 &hml LALT N2  &hml LCTRL N3 &hml LSHIFT N4       &kp N5                        /**/                  &kp N6       &hmr RSHIFT N7        &hmr LCTRL N8 &hmr LALT N9 &hmr LGUI N0  &trans
+&trans  &kp  SV_PIPE &kp  SV_DQT   &kp  SV_PLUS  &kp SV_MINUS         &sbkt         &trans  &trans  /**/  &trans  &trans  &sbrc        &kp  SV_UNDER         &kp  SV_COMMA &kp SV_DOT   &kp  SV_CARET &trans
+                                   &trans        &trans               &trans        &trans  &trans  /**/  &trans  &trans  &trans       &trans                &trans
             >;
         };
 
